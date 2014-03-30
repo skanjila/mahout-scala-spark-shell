@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package scala.tools.nsc
+package org.apache.mahout.sparkbindings.shell
 
 object SparkHelper {
   def explicitParentLoader(settings: Settings) = settings.explicitParentLoader

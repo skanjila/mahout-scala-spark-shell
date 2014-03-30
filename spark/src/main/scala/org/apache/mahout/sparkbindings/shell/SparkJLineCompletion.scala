@@ -5,7 +5,7 @@
  * @author Paul Phillips
  */
 
-package org.apache.spark.repl
+package org.apache.mahout.sparkbindings.shell
 
 import scala.tools.nsc._
 import scala.tools.nsc.interpreter._

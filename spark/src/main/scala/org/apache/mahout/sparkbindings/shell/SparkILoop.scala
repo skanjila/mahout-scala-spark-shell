@@ -5,7 +5,7 @@
  * @author Alexander Spoon
  */
 
-package org.apache.spark.repl
+package org.apache.mahout.sparkbindings.shell
 
 
 import scala.tools.nsc._

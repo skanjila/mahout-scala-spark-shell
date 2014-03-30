@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.repl
+package org.apache.mahout.sparkbindings.shell
 
 import java.io.{ByteArrayOutputStream, InputStream}
 import java.net.{URI, URL, URLClassLoader, URLEncoder}

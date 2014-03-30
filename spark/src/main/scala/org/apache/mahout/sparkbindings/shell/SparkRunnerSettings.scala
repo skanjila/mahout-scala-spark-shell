@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.repl
+package org.apache.mahout.sparkbindings.shell
 
 import scala.tools.nsc.Settings
 
