@@ -37,7 +37,7 @@ import scala.util.control.ControlThrowable
 import util.stackTraceString
 
 import org.apache.spark.{HttpServer, SparkConf, Logging}
-import org.apache.spark.util.Utils
+import org.apache.mahout.sparkbindings.shell.Utils
 
 // /** directory to save .class files to */
 // private class ReplVirtualDirectory(out: JPrintWriter) extends VirtualDirectory("((memory))", None) {

@@ -274,10 +274,11 @@
 		<version>2.10.0</version>
 	</dependency>
 	
+	
 	<dependency>
-		<groupId>jline</groupId>
-		<artifactId>jline</artifactId>
-		<version>2.10</version>
+  		<groupId>org.scala-lang</groupId>
+  		<artifactId>jline</artifactId>
+  		<version>2.10.0</version>
 	</dependency>
 
   </dependencies>
