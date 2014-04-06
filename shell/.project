@@ -13,8 +13,12 @@
     <buildCommand>
       <name>net.sourceforge.pmd.eclipse.plugin.pmdBuilder</name>
     </buildCommand>
+    <buildCommand>
+      <name>org.eclipse.m2e.core.maven2Builder</name>
+    </buildCommand>
   </buildSpec>
   <natures>
+    <nature>org.eclipse.m2e.core.maven2Nature</nature>
     <nature>org.eclipse.jdt.core.javanature</nature>
     <nature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</nature>
     <nature>net.sourceforge.pmd.eclipse.plugin.pmdNature</nature>

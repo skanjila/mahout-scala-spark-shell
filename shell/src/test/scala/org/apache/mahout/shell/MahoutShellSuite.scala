@@ -28,7 +28,7 @@ import org.scalatest.FunSuite
 import spark.SparkContext
 
 
-class ReplSuite extends FunSuite {
+class MahoutShellSuite extends FunSuite {
 
   def runInterpreter(master: String, input: String): String = {
     val in = new BufferedReader(new StringReader(input + "\n"))
@@ -81,8 +81,8 @@ class ReplSuite extends FunSuite {
     val out = new StringWriter()
     val interp = new ILoop(new PrintWriter(out))
     val args = Array("Hello","World")
-    //interp.sparkContext = new SparkContext("local", "repl-test")
-    //interp.sparkContext = new SparkContext(args(0), "HBaseTest",System.getenv("SPARK_HOME"), SparkContext.jarOfClass(this.getClass))
+    interp.sparkContext = new SparkContext("local", "repl-test")
+    interp.sparkContext = new SparkContext(args(0), "HBaseTest",System.getenv("SPARK_HOME"), SparkContext.jarOfClass(this.getClass))
     interp.createInterpreter()
     interp.intp.initialize()
     interp.sparkContext.setLocalProperty("someKey", "someValue")

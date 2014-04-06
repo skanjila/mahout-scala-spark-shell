@@ -21,7 +21,6 @@ import spark.repl.SparkILoop
 import spark.repl.Main
 import scala.collection.mutable.Set
 
-//object MahoutShell extends Main {
 object MahoutShell  {
   private var _interp: SparkILoop = _
 
