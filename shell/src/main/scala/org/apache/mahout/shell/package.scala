@@ -20,19 +20,19 @@ package org.apache.mahout
 import org.apache.spark.rdd.RDD
 import org.apache.mahout.math.{Matrix, Vector}
 import scala.reflect.ClassTag
-import org.apache.mahout.shell.utils.{SparkConf, SparkContext}
+import org.apache.spark.{SparkConf, SparkContext}
 import java.io._
 import scala.collection.mutable.ArrayBuffer
 import org.apache.mahout.common.IOUtils
 import org.apache.log4j.Logger
-import org.apache.mahout.sparkbindings.drm.DrmLike
+//import org.apache.mahout.sparkbindings.drm.DrmLike
 
 /**
  * @author dmitriy
  */
 package object shell {
 
-  private[shell] val log = Logger.getLogger("org.apache.mahout.sparkbindings")
+  private[shell] val log = Logger.getLogger("org.apache.mahout.shell")
 
   /**
    * Create proper spark context that includes local Mahout jars
@@ -105,8 +105,8 @@ package object shell {
               j.matches(".*mahout-math-scala-.*\\.jar") ||
               j.matches(".*mahout-core-.*\\.jar") ||
               j.matches(".*mahout-spark-.*\\.jar")
-        ).filter(!_.matches(".*-tests.jar")) ++
-            SparkContext.jarOfClass(classOf[DrmLike[_]]) ++ customJars
+        )/*.filter(!_.matches(".*-tests.jar")) ++
+            SparkContext.jarOfClass(classOf[DrmLike[_]]) ++ customJars*/
 
         if (log.isDebugEnabled) {
           log.debug("Mahout jars:")

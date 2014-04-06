@@ -15,16 +15,17 @@
  * limitations under the License.
  */
 
-package org.apache.spark.repl
+package org.apache.mahout.shell
 
 import java.io._
 import java.net.URLClassLoader
-
+import spark.repl.SparkILoop
 import scala.collection.mutable.ArrayBuffer
+import scala.tools.nsc.interpreter.ILoop
 
 import com.google.common.io.Files
 import org.scalatest.FunSuite
-import org.apache.spark.SparkContext
+import spark.SparkContext
 
 
 class ReplSuite extends FunSuite {
@@ -43,10 +44,10 @@ class ReplSuite extends FunSuite {
       }
     }
     val interp = new SparkILoop(in, new PrintWriter(out), master)
-    org.apache.spark.repl.Main.interp = interp
+    spark.repl.Main.interp = interp
     val separator = System.getProperty("path.separator")
     interp.process(Array("-classpath", paths.mkString(separator)))
-    org.apache.spark.repl.Main.interp = null
+    spark.repl.Main.interp = null
     if (interp.sparkContext != null) {
       interp.sparkContext.stop()
     }
@@ -70,7 +71,7 @@ class ReplSuite extends FunSuite {
     class ILoop(out: PrintWriter) extends SparkILoop(None, out, None) {
       settings = new scala.tools.nsc.Settings
       settings.usejavacp.value = true
-      org.apache.spark.repl.Main.interp = this
+      spark.repl.Main.interp = this
       override def createInterpreter() {
         intp = new SparkILoopInterpreter
         intp.setContextClassLoader()
@@ -79,7 +80,9 @@ class ReplSuite extends FunSuite {
 
     val out = new StringWriter()
     val interp = new ILoop(new PrintWriter(out))
-    interp.sparkContext = new SparkContext("local", "repl-test")
+    val args = Array("Hello","World")
+    //interp.sparkContext = new SparkContext("local", "repl-test")
+    //interp.sparkContext = new SparkContext(args(0), "HBaseTest",System.getenv("SPARK_HOME"), SparkContext.jarOfClass(this.getClass))
     interp.createInterpreter()
     interp.intp.initialize()
     interp.sparkContext.setLocalProperty("someKey", "someValue")
