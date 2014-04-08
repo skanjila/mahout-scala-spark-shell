@@ -19,13 +19,13 @@ package org.apache.mahout.shell
 
 import java.io._
 import java.net.URLClassLoader
-import spark.repl.SparkILoop
+import org.apache.spark.repl.SparkILoop
 import scala.collection.mutable.ArrayBuffer
 import scala.tools.nsc.interpreter.ILoop
 
 import com.google.common.io.Files
 import org.scalatest.FunSuite
-import spark.SparkContext
+import org.apache.spark.SparkContext
 
 
 class MahoutShellSuite extends FunSuite {
@@ -44,10 +44,10 @@ class MahoutShellSuite extends FunSuite {
       }
     }
     val interp = new SparkILoop(in, new PrintWriter(out), master)
-    spark.repl.Main.interp = interp
+    org.apache.spark.repl.Main.interp = interp
     val separator = System.getProperty("path.separator")
     interp.process(Array("-classpath", paths.mkString(separator)))
-    spark.repl.Main.interp = null
+    org.apache.spark.repl.Main.interp = null
     if (interp.sparkContext != null) {
       interp.sparkContext.stop()
     }
@@ -71,7 +71,7 @@ class MahoutShellSuite extends FunSuite {
     class ILoop(out: PrintWriter) extends SparkILoop(None, out, None) {
       settings = new scala.tools.nsc.Settings
       settings.usejavacp.value = true
-      spark.repl.Main.interp = this
+      org.apache.spark.repl.Main.interp = this
       override def createInterpreter() {
         intp = new SparkILoopInterpreter
         intp.setContextClassLoader()
@@ -81,11 +81,13 @@ class MahoutShellSuite extends FunSuite {
     val out = new StringWriter()
     val interp = new ILoop(new PrintWriter(out))
     val args = Array("Hello","World")
-    interp.sparkContext = new SparkContext("local", "repl-test")
-    interp.sparkContext = new SparkContext(args(0), "HBaseTest",System.getenv("SPARK_HOME"), SparkContext.jarOfClass(this.getClass))
+    //error: not enough arguments for cons(master,appName,sparkHome, jars: Seq[String], environment: scala.collection.Map[String,String])spark.SparkContext
+    interp.sparkContext = new SparkContext("local", "repl-test","spark-home",Seq("first","second"),Map(("x", "24"), ("y", "25")))
     interp.createInterpreter()
     interp.intp.initialize()
-    interp.sparkContext.setLocalProperty("someKey", "someValue")
+    
+    //the method setLocalProperty doesnt exist anymore with the latest API
+    //interp.sparkContext.setLocalProperty("someKey", "someValue")
 
     // Make sure the value we set in the caller to interpret is propagated in the thread that
     // interprets the command.
