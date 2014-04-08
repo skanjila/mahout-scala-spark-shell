@@ -17,8 +17,8 @@
 
 package org.apache.mahout.shell
 
-import spark.repl.SparkILoop
-import spark.repl.Main
+import org.apache.spark.repl.SparkILoop
+import org.apache.spark.repl.Main
 import scala.collection.mutable.Set
 
 object MahoutShell  {

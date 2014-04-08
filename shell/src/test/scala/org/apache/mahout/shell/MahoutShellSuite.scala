@@ -25,10 +25,11 @@ import scala.tools.nsc.interpreter.ILoop
 
 import com.google.common.io.Files
 import org.scalatest.FunSuite
+import org.apache.mahout.sparkbindings.test.MahoutLocalContext
 import org.apache.spark.SparkContext
 
 
-class MahoutShellSuite extends FunSuite {
+class MahoutShellSuite extends FunSuite with MahoutLocalContext {
 
   def runInterpreter(master: String, input: String): String = {
     val in = new BufferedReader(new StringReader(input + "\n"))
@@ -81,7 +82,6 @@ class MahoutShellSuite extends FunSuite {
     val out = new StringWriter()
     val interp = new ILoop(new PrintWriter(out))
     val args = Array("Hello","World")
-    //error: not enough arguments for cons(master,appName,sparkHome, jars: Seq[String], environment: scala.collection.Map[String,String])spark.SparkContext
     interp.sparkContext = new SparkContext("local", "repl-test","spark-home",Seq("first","second"),Map(("x", "24"), ("y", "25")))
     interp.createInterpreter()
     interp.intp.initialize()
