@@ -5,8 +5,8 @@
   <classpathentry kind="var" path="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar"/>
   <classpathentry kind="var" path="M2_REPO/javax/activation/activation/1.1/activation-1.1.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-core/1.0-SNAPSHOT/mahout-core-1.0-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-math/1.0-SNAPSHOT/mahout-math-1.0-SNAPSHOT.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-core/1.0-SNAPSHOT/mahout-core-1.0-SNAPSHOT.jar" sourcepath="M2_REPO/org/apache/mahout/mahout-core/1.0-SNAPSHOT/mahout-core-1.0-SNAPSHOT-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-math/1.0-SNAPSHOT/mahout-math-1.0-SNAPSHOT.jar" sourcepath="M2_REPO/org/apache/mahout/mahout-math/1.0-SNAPSHOT/mahout-math-1.0-SNAPSHOT-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/guava/guava/16.0/guava-16.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar"/>
@@ -44,7 +44,7 @@
   <classpathentry kind="var" path="M2_REPO/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-el/commons-el/1.0/commons-el-1.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-math-scala/1.0-SNAPSHOT/mahout-math-scala-1.0-SNAPSHOT.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-math-scala/1.0-SNAPSHOT/mahout-math-scala-1.0-SNAPSHOT.jar" sourcepath="M2_REPO/org/apache/mahout/mahout-math-scala/1.0-SNAPSHOT/mahout-math-scala-1.0-SNAPSHOT-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-math-scala/1.0-SNAPSHOT/mahout-math-scala-1.0-SNAPSHOT-tests.jar"/>
@@ -110,13 +110,14 @@
   <classpathentry kind="var" path="M2_REPO/org/acplt/oncrpc/1.0.7/oncrpc-1.0.7.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/codahale/metrics/metrics-graphite/3.0.0/metrics-graphite-3.0.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-bagel_2.10/0.9.0-incubating/spark-bagel_2.10-0.9.0-incubating.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-compiler/2.10.3/scala-compiler-2.10.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-reflect/2.10.0/scala-reflect-2.10.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/scala-lang/jline/2.10.0/jline-2.10.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-spark/1.0-SNAPSHOT/mahout-spark-1.0-SNAPSHOT.jar" sourcepath="M2_REPO/org/apache/mahout/mahout-spark/1.0-SNAPSHOT/mahout-spark-1.0-SNAPSHOT-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/scalatest/scalatest_2.10/2.0/scalatest_2.10-2.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-compiler/2.10.3/scala-compiler-2.10.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-repl_2.10/0.9.0-incubating/spark-repl_2.10-0.9.0-incubating.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-mllib_2.10/0.9.0-incubating/spark-mllib_2.10-0.9.0-incubating.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/jblas/jblas/1.2.3/jblas-1.2.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/scala-lang/jline/2.10.3/jline-2.10.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/jul-to-slf4j/1.7.2/jul-to-slf4j-1.7.2.jar"/>
 </classpath>

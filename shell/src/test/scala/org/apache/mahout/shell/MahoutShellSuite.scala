@@ -82,12 +82,13 @@ class MahoutShellSuite extends FunSuite with MahoutLocalContext {
     val out = new StringWriter()
     val interp = new ILoop(new PrintWriter(out))
     val args = Array("Hello","World")
-    interp.sparkContext = new SparkContext("local", "repl-test","spark-home",Seq("first","second"),Map(("x", "24"), ("y", "25")))
+    interp.sparkContext = new SparkContext("local", "repl-test","spark-home",Nil,Map(("x", "24"), ("y", "25")))
+    //interp.sparkContext = new SparkContext("local", "repl-test","spark-home",Seq("first","second"),Map(("x", "24"), ("y", "25")))
     interp.createInterpreter()
     interp.intp.initialize()
     
     //the method setLocalProperty doesnt exist anymore with the latest API
-    //interp.sparkContext.setLocalProperty("someKey", "someValue")
+    interp.sparkContext.setLocalProperty("someKey", "someValue")
 
     // Make sure the value we set in the caller to interpret is propagated in the thread that
     // interprets the command.
